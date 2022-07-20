@@ -1,0 +1,91 @@
+[debug] The rl.DNNApproximation has the following regular definitions changed:
+[debug] 	UsedName(iterateUpdatesV2,[Default]), UsedName(iterateUpdates,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.DNNApproximation: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.DNNApproximation.
+[debug] None of the modified names appears in source file of AssetAllocationPerformanceTest. This dependency is not being considered for invalidation.
+[debug] The rl.DNNApproximation$ has the following regular definitions changed:
+[debug] 	UsedName(iterateUpdatesV2,[Default]), UsedName(iterateUpdates,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.DNNApproximation$: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.DNNApproximation$.
+[debug] None of the modified names appears in source file of AssetAllocationPerformanceTest. This dependency is not being considered for invalidation.
+[debug] The rl.FiniteHorizon$ has the following regular definitions changed:
+[debug] 	UsedName(valueFunctionAndPolicyFromQValues,[Default]), UsedName(optimalValueFunctionAndPolicy,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.FiniteHorizon$: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.FiniteHorizon$.
+[debug] None of the modified names appears in source file of DynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] None of the modified names appears in source file of FlipFlop. This dependency is not being considered for invalidation.
+[debug] None of the modified names appears in source file of ApproximateDynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] The rl.chapter7.AssetAllocationDiscrete has the following regular definitions changed:
+[debug] 	UsedName(valueFunctionsAndPolicies,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.chapter7.AssetAllocationDiscrete: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.chapter7.AssetAllocationDiscrete.
+[debug] None of the modified names appears in source file of AssetAllocationPerformanceTest. This dependency is not being considered for invalidation.
+[debug] The rl.WithTime has the following regular definitions changed:
+[debug] 	UsedName(stepTime,[Default]), UsedName(pair,[Default]), UsedName(step,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.WithTime: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.WithTime.
+[debug] None of the modified names appears in source file of DynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] None of the modified names appears in source file of ApproximateDynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] The rl.utils.Utils has the following regular definitions changed:
+[debug] 	UsedName(laguerrePolynomials,[Default]), UsedName(hermitePolynomials,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.utils.Utils: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.utils.Utils.
+[debug] None of the modified names appears in source file of UtilsTest. This dependency is not being considered for invalidation.
+[debug] The rl.FiniteMarkovProcess has the following regular definitions changed:
+[debug] 	UsedName(sortingFunction,[Default]), UsedName(defaultSortingFunction,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.FiniteMarkovProcess: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.FiniteMarkovProcess.
+[debug] None of the modified names appears in source file of ApproximateDynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] The rl.chapter7.AssetAllocationDiscrete$ has the following regular definitions changed:
+[debug] 	UsedName(valueFunctionsAndPolicies,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.chapter7.AssetAllocationDiscrete$: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.chapter7.AssetAllocationDiscrete$.
+[debug] None of the modified names appears in source file of AssetAllocationPerformanceTest. This dependency is not being considered for invalidation.
+[debug] The rl.utils.Utils$ has the following regular definitions changed:
+[debug] 	UsedName(laguerrePolynomials,[Default]), UsedName(hermitePolynomials,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.utils.Utils$: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.utils.Utils$.
+[debug] None of the modified names appears in source file of UtilsTest. This dependency is not being considered for invalidation.
+[debug] The rl.MarkovDecisionProcess has the following regular definitions changed:
+[debug] 	UsedName(actionTraces,[Default]), UsedName(simulateAction,[Default]), UsedName(applyPolicy,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.MarkovDecisionProcess: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.MarkovDecisionProcess.
+[debug] None of the modified names appears in source file of AssetAllocationPerformanceTest. This dependency is not being considered for invalidation.
+[debug] The rl.WithTime$ has the following regular definitions changed:
+[debug] 	UsedName(stepTime,[Default]), UsedName(pair,[Default]), UsedName(step,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.WithTime$: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.WithTime$.
+[debug] None of the modified names appears in source file of DynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] None of the modified names appears in source file of ApproximateDynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] The rl.DynamicProgramming$ has the following regular definitions changed:
+[debug] 	UsedName(valueIterationResult,[Default]), UsedName(valueFunctionToString,[Default]), UsedName(greedyPolicyFromValueFunction,[Default]), UsedName(policyIterationResult,[Default]), UsedName(policyIteration,[Default]), UsedName(almostEqualValueFunctionAndPolicy$default$3,[Default]), UsedName(almostEqualValueFunctionAndPolicy,[Default]), UsedName(valueFunctionToString$default$2,[Default]).
+[debug] All member reference dependencies will be considered within this context.
+[debug] Files invalidated by inheriting from (external) rl.DynamicProgramming$: Set(); now invalidating by inheritance (internally).
+[debug] Getting direct dependencies of all classes transitively invalidated by inheritance.
+[debug] Getting classes that directly depend on (external) rl.DynamicProgramming$.
+[debug] None of the modified names appears in source file of DynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] None of the modified names appears in source file of FlipFlop. This dependency is not being considered for invalidation.
+[debug] None of the modified names appears in source file of ApproximateDynamicProgrammingTest. This dependency is not being considered for invalidation.
+[debug] No changes

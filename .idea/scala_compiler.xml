@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ScalaCompilerConfiguration">
+    <profile name="sbt 1" modules="rlforfinancescala">
+      <option name="postfixOps" value="true" />
+    </profile>
+    <profile name="sbt 2" modules="RLForFinanceScala">
+      <option name="higherKinds" value="true" />
+    </profile>
+  </component>
+</project>
