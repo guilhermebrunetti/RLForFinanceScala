@@ -222,7 +222,7 @@ object OptimalOrderExecutionApp extends App {
   val valueFunctionsAndPolicies:
     Seq[(ValueFunctionApproximation[PriceAndShares], DeterministicPolicy[PriceAndShares, Int])] =
     optimalOrderExecution.getValueFunctionAndPolicy(
-      numSamples = 1000
+      numSamples = 500
     )
   logger.info(s"Finished computation at ${LocalDateTime.now()}")
   
