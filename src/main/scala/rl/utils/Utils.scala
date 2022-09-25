@@ -2,18 +2,19 @@ package rl.utils
 
 import breeze.numerics._
 
-object Utils extends App {
-  
+object Utils {
+
   val VSML: Double = 1.0e-8
-  
+
   def getLogisticFunction(alpha: Double)(x: Double): Double = {
     1.0 / (1.0 + exp(-alpha * x))
   }
-  
+
   def getUnitSigmoidFunction(alpha: Double)(x: Double): Double = {
     1.0 / (1.0 + pow(1.0 / (if (x == 0) VSML else x) - 1.0, alpha))
   }
-  
+
+  // First 5 Laguerre Polynomials
   def laguerrePolynomials: Seq[Double => Double] = Seq(
     _ => 1.0,
     x => 1.0 - x,
@@ -22,7 +23,8 @@ object Utils extends App {
     x => (pow(x, 4) - 16 * pow(x, 3) + 72 * pow(x, 2) - 96 * x + 24) / 24.0,
     x => (-pow(x, 5) + 25 * pow(x, 4) - 200 * pow(x, 3) + 600 * pow(x, 2) - 600 * x + 120) / 120.0
   )
-  
+
+  // First 5 Hermite Polynomials
   def hermitePolynomials: Seq[Double => Double] = Seq(
     _ => 1.0,
     x => x,
@@ -31,5 +33,11 @@ object Utils extends App {
     x => pow(x, 4) - 6 * pow(x, 2) + 3,
     x => pow(x, 5) - 10 * pow(x, 3) + 15 * x
   )
-  
+
+  def tolerantCompareDouble(tolerance: Double)(a: Double, b: Double): Int = tolerance match {
+    case _ if math.abs(a - b) <= tolerance => 0
+    case _ if a <= b - tolerance => -1
+    case _ if a >= b + tolerance => 1
+  }
+
 }

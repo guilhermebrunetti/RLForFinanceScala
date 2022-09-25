@@ -4,8 +4,6 @@
     <profile name="sbt 1" modules="rlforfinancescala">
       <option name="postfixOps" value="true" />
     </profile>
-    <profile name="sbt 2" modules="RLForFinanceScala">
-      <option name="higherKinds" value="true" />
-    </profile>
+    <profile name="sbt 2" modules="RLForFinanceScala" />
   </component>
 </project>

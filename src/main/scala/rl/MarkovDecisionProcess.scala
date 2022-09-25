@@ -3,7 +3,7 @@ package rl
 import rl.FiniteMarkovDecisionProcess.StateActionMapping
 import rl.FiniteMarkovProcess.defaultSortingFunction
 import rl.FiniteMarkovRewardProcess.{RewardTransition, StateReward}
-import rl.utils.{Distribution, FiniteDistribution}
+import rl.utils.{Distribution, FiniteDistribution, Utils}
 
 trait HasAction[A] {
   def action: A
@@ -115,22 +115,22 @@ object FiniteMarkovDecisionProcess {
 trait FiniteMarkovDecisionProcess[S, A]
   extends MarkovDecisionProcess[S, A] {
   self =>
-  
+
   def nonTerminalStates: IndexedSeq[NonTerminal[S]] = stateActionMap.keySet.toIndexedSeq.sortWith(stateSortingFunction)
-  
+
   def stateSortingFunction(x: NonTerminal[S], y: NonTerminal[S]): Boolean = defaultSortingFunction(x, y)
-  
+
   def stateActionMap: StateActionMapping[S, A]
-  
+
   override def step(
     state: NonTerminal[S],
     action: A
   ): FiniteDistribution[(State[S], Double)] = stateActionMap(state)(action)
-  
-  override def actions(state: NonTerminal[S]): Iterable[A] = {
-    stateActionMap(state).keys
+
+  override def actions(state: NonTerminal[S]): IndexedSeq[A] = {
+    stateActionMap(state).keys.toIndexedSeq.sortWith(actionSortingFunction)
   }
-  
+
   override def toString: String = {
     stateActionMap
       .toIndexedSeq
@@ -146,17 +146,27 @@ trait FiniteMarkovDecisionProcess[S, A]
           }.mkString("\n")
       }.mkString("\n")
   }
-  
+
   def actionSortingFunction(x: A, y: A): Boolean = defaultSortingFunction(x, y)
-  
+
+  def compareActionValueTuple(x: (A, Double), y: (A, Double)): Int = {
+    val (action1, value1) = x
+    val (action2, value2) = y
+    val comparedValue = Utils.tolerantCompareDouble(Utils.VSML)(value1, value2)
+    val comparedAction = Ordering.fromLessThan(this.actionSortingFunction).compare(action1, action2)
+    if (comparedValue != 0) comparedValue else comparedAction
+  }
+
   def applyFinitePolicy(policy: FinitePolicy[S, A]): FiniteMarkovRewardProcess[S] = {
-    
+
     val rewardProcess = new FiniteMarkovRewardProcess[S] {
       override def transitionRewardMap: RewardTransition[S] = self.stateActionMap.map { case (state, actionMap) =>
         val actions: FiniteDistribution[A] = policy.act(state)
         val outcomes: FiniteDistribution[(State[S], Double)] = actions.flatMap(action => actionMap(action))
         state -> outcomes
       }
+
+      override def sortingFunction(x: NonTerminal[S], y: NonTerminal[S]): Boolean = self.stateSortingFunction(x, y)
     }
     
     rewardProcess

@@ -1,20 +1,19 @@
 package rl
 
-import java.util.Locale
-
 import breeze.linalg._
 import breeze.numerics._
 import com.typesafe.scalalogging.Logger
 import rl.DynamicProgramming._
-import rl.FiniteMarkovRewardProcess.RewardTransition
 import rl.IterateUtils._
 import rl.utils.{Categorical, Choose, FiniteDistribution}
 
+import java.util.Locale
+
 object DynamicProgramming {
   type ValueFunction[S] = Map[NonTerminal[S], Double]
-  
+
   implicit val defaultTolerance: Double = 1.0e-5
-  
+
   def policyIterationResult[S, A](
     mdp: FiniteMarkovDecisionProcess[S, A],
     gamma: Double,
@@ -110,17 +109,22 @@ object DynamicProgramming {
     valueFunction: ValueFunction[S],
     gamma: Double
   ): FiniteDeterministicPolicy[S, A] = {
-    
+
+    implicit object ActionValueOrdering extends math.Ordering[(A, Double)] {
+      override def compare(x: (A, Double), y: (A, Double)): Int = mdp.compareActionValueTuple(x, y)
+    }
+
     val greedyPolicyMap: Map[S, A] = mdp.nonTerminalStates.map { state =>
-      val qValues: Map[A, Double] = mdp.actions(state).map { action =>
+      val qValues: Iterable[(A, Double)] = mdp.actions(state).map { action =>
         action -> mdp.stateActionMap(state)(action).expectation { case (nextState, reward) =>
           reward + gamma * extendedValueFunction(valueFunction)(nextState)
         }
-      }.toMap
-      val optimalAction: A = qValues
-        .maxBy { case (_, v) => v } match {
+      }
+
+      val optimalAction: A = qValues.max match {
         case (a, _) => a
       }
+
       state.state -> optimalAction
     }.toMap
     
@@ -205,25 +209,23 @@ object DynamicProgramming {
 }
 
 object DynamicProgrammingApp extends App {
-  
+
   val logger: Logger = Logger("DynamicProgrammingApp")
   Locale.setDefault(Locale.US) // To print numbers in US format
-  
+
   val rewardMap = Map(
     1 -> Categorical(Map((1, 7.0) -> 0.6, (2, 5.0) -> 0.3, (3, 2.0) -> 0.1)),
     2 -> Categorical(Map((1, -2.0) -> 0.1, (2, 4.0) -> 0.2, (3, 0.0) -> 0.7)),
     3 -> Categorical(Map((1, 3.0) -> 0.2, (2, 8.0) -> 0.6, (3, 4.0) -> 0.2))
   )
   val gamma: Double = 0.9
-  
-  val FMRP = new FiniteMarkovRewardProcess[Int] {
-    override def transitionRewardMap: RewardTransition[Int] = FiniteMarkovRewardProcess.processInputMap(rewardMap)
-  }
-  
+
+  val FMRP = FiniteMarkovRewardProcess(rewardMap)
+
   val stationaryDistribution = FMRP.stationaryDistribution
-  
+
   logger.info(s"Stationary Distribution:\n$stationaryDistribution")
-  
+
   val rewardVector = FMRP.rewardVector
   val rewardVectorStr = FMRP.rewardVectorToString
   val valueFunction = FMRP.valueFunctionVector(gamma)

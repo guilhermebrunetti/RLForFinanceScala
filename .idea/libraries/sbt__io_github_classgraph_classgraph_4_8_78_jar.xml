@@ -2,12 +2,15 @@
   <library name="sbt: io.github.classgraph:classgraph:4.8.78:jar">
     <CLASSES>
       <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/github/classgraph/classgraph/4.8.78/classgraph-4.8.78.jar!/" />
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/classgraph/classgraph/4.8.78/classgraph-4.8.78.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/github/classgraph/classgraph/4.8.78/classgraph-4.8.78-javadoc.jar!/" />
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/classgraph/classgraph/4.8.78/classgraph-4.8.78-javadoc.jar!/" />
     </JAVADOC>
     <SOURCES>
       <root url="jar://$USER_HOME$/AppData/Local/Coursier/cache/v1/https/repo1.maven.org/maven2/io/github/classgraph/classgraph/4.8.78/classgraph-4.8.78-sources.jar!/" />
+      <root url="jar://$USER_HOME$/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/io/github/classgraph/classgraph/4.8.78/classgraph-4.8.78-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

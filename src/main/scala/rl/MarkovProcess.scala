@@ -113,14 +113,15 @@ trait FiniteMarkovProcess[S]
 
 object FiniteMarkovProcess {
   type Transition[S] = Map[NonTerminal[S], FiniteDistribution[State[S]]]
-  
+
+  // Default sorting function that produces no effect
   def defaultSortingFunction[X](x: X, y: X) = true
-  
+
   def transitionsFromMap[S](transitionMap: Map[S, FiniteDistribution[S]]): Transition[S] = {
     val nonTerminalStates = transitionMap.keySet
-    
+
     def toState(s: S): State[S] = if (nonTerminalStates.contains(s)) NonTerminal(s) else Terminal(s)
-    
+
     transitionMap.map { case (s, fd) => NonTerminal(s) -> fd.map(toState) }
   }
 }
